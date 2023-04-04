@@ -88,7 +88,7 @@
     />
 
     <!-- Favicon icon -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" />
 
     <!-- Google fonts -->
     <link
@@ -110,8 +110,25 @@
 
     {% include 'includes/topbar.html' %} 
     {% include 'includes/navbar.html'%} 
-    {% block content %} 
-    {% endblock %} 
+    {% block content %}
+
+    {% endblock %}
+    <!-- Full Page Search -->
+    <div id="full-page-search">
+      <button type="button" class="close">×</button>
+      <form
+        action="https://storage.googleapis.com/theme-vessel/carhouse/index.html#"
+        class="search-header"
+      >
+        <input
+          type="search"
+          value=""
+          placeholder="type keyword(s) here. Eg: audi, benz etc"
+        />
+        <button type="submit" class="btn btn-sm button-theme">Search</button>
+      </form>
+    </div>
+
     {% include 'includes/footer.html' %}
 
     <script src="{% static 'js/jquery-2.2.0.min.js'%}"></script>
