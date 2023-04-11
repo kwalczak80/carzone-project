@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>Car Zone {% block title %} {% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
 
@@ -117,13 +117,13 @@
     <div id="full-page-search">
       <button type="button" class="close">×</button>
       <form
-        action="https://storage.googleapis.com/theme-vessel/carhouse/index.html#"
+        action="{% url 'search' %}"
         class="search-header"
       >
         <input
           type="search"
           value=""
-          placeholder="type keyword(s) here. Eg: audi, benz etc"
+          placeholder="type keyword(s) here. Eg: audi, benz etc" name="keyword"
         />
         <button type="submit" class="btn btn-sm button-theme">Search</button>
       </form>
